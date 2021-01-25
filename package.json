@@ -1,0 +1,20 @@
+{
+  "name": "clean-express-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "awilix": "^4.3.1",
+    "convict": "^6.0.0",
+    "express": "^4.17.1",
+    "joi": "^17.3.0",
+    "restify-errors": "^8.0.2",
+    "uuid": "^8.3.2"
+  }
+}
