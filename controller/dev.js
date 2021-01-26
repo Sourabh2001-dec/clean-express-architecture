@@ -5,8 +5,9 @@ class DevController {
 
     this.createDev = this.createDev.bind(this);
     this.getDev = this.getDev.bind(this);
-    // this.getDevByNames = this.getDevByNames.bind(this);
-    // this.listDevs = this.listDevs.bind(this);
+    // this.getDevByEmails = this.getDevByEmails.bind(this);
+    this.getDevByEmail = this.getDevByEmail.bind(this);
+    this.listDevs = this.listDevs.bind(this);
   }
 
   async createDev(req, res, next) {
@@ -32,6 +33,24 @@ class DevController {
       res.json(developer);
     } catch (err) {
       next(err);
+    }
+  }
+
+  async listDevs(req, res, next) {
+    try {
+      const devs = await this.devService.listDevs();
+      res.json(devs);
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  async getDevByEmail(req, res, next) {
+    try {
+      const dev = await this.devService.getDevByEmail(req.body.email);
+      res.json(dev);
+    } catch (error) {
+      next(error);
     }
   }
 }

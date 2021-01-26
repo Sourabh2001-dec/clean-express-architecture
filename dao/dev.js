@@ -32,9 +32,12 @@ class DevDao {
     return devs;
   }
 
-  async getDevByNames(firstname) {
-    const devs = await this.db.findOne({ firstname });
-    return devs;
+  async getDevByEmail(email) {
+    const dev = await this.db.findOne({ email });
+    if (!dev || dev === null) {
+      throw new errors.NotFoundError("Dev not found!");
+    }
+    return dev;
   }
 }
 

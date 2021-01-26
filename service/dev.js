@@ -11,8 +11,8 @@ class DevService {
     return this.devDao.createDev(email, firstname, lastname, hobbies);
   }
 
-  getDevByNames(firstname) {
-    return this.devDao.getDevByNames(firstname);
+  getDevByEmail(email) {
+    return this.devDao.getDevByEmail(email);
   }
 
   listDevs() {

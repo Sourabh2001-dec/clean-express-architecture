@@ -7,6 +7,8 @@ const devController = container.resolve("devController");
 
 const router = express.Router();
 router.post("/", validate(developerDto), devController.createDev);
+router.post("/name", devController.getDevByEmail);
 router.get("/:id", devController.getDev);
+router.get("/", devController.listDevs);
 
 module.exports = router;
